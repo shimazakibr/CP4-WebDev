@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Garrafa EcoFlow",
+        "category": "Casa",
+        "price": 59.90,
+        "description": "Garrafa reutilizável em aço inoxidável para substituir garrafas descartáveis.",
+        "emoji": "💧"
+    },
+    {
+        "id": 2,
+        "name": "Ecobag Natural",
+        "category": "Roupas e Acessórios",
+        "price": 34.90,
+        "description": "Ecobag resistente produzida com algodão para compras do dia a dia.",
+        "emoji": "👜"
+    },
+    {
+        "id": 3,
+        "name": "Kit Skincare Natural",
+        "category": "Beleza",
+        "price": 89.90,
+        "description": "Kit de cuidados pessoais com ingredientes de origem natural.",
+        "emoji": "🌿"
+    },
+    {
+        "id": 4,
+        "name": "Camiseta EcoBasic",
+        "category": "Roupas e Acessórios",
+        "price": 79.90,
+        "description": "Camiseta confortável produzida com algodão de produção responsável.",
+        "emoji": "👕"
+    },
+    {
+        "id": 5,
+        "name": "Luminária Solar",
+        "category": "Tecnologia Verde",
+        "price": 129.90,
+        "description": "Luminária com carregamento solar para iluminação eficiente.",
+        "emoji": "☀️"
+    },
+    {
+        "id": 6,
+        "name": "Escova de Bambu",
+        "category": "Beleza",
+        "price": 24.90,
+        "description": "Escova de dentes com cabo de bambu.",
+        "emoji": "🪥"
+    },
+    {
+        "id": 7,
+        "name": "Potes Reutilizáveis",
+        "category": "Casa",
+        "price": 69.90,
+        "description": "Conjunto de potes reutilizáveis para armazenamento de alimentos.",
+        "emoji": "🥣"
+    },
+    {
+        "id": 8,
+        "name": "Carregador Solar",
+        "category": "Tecnologia Verde",
+        "price": 159.90,
+        "description": "Carregador portátil com painel solar.",
+        "emoji": "🔋"
+    },
+    {
+        "id": 9,
+        "name": "Mochila Recycled",
+        "category": "Roupas e Acessórios",
+        "price": 149.90,
+        "description": "Mochila urbana feita com materiais reciclados.",
+        "emoji": "🎒"
+    },
+    {
+        "id": 10,
+        "name": "Sabonete Artesanal",
+        "category": "Beleza",
+        "price": 19.90,
+        "description": "Sabonete artesanal com ingredientes de origem vegetal.",
+        "emoji": "🧼"
+    },
+    {
+        "id": 11,
+        "name": "Kit Talheres Reutilizáveis",
+        "category": "Casa",
+        "price": 39.90,
+        "description": "Kit compacto de talheres reutilizáveis.",
+        "emoji": "🍴"
+    },
+    {
+        "id": 12,
+        "name": "Fone EcoSound",
+        "category": "Tecnologia Verde",
+        "price": 199.90,
+        "description": "Fone sem fio desenvolvido com foco em sustentabilidade.",
+        "emoji": "🎧"
+    }
+]
