@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoTrend | E-commerce Sustentável</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-container">
+
+        <a href="#" class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            EcoTrend
+        </a>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+
+            <button id="openCart" class="cart-button">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Carrinho
+                <span id="cartCount">0</span>
+            </button>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">CONSUMO CONSCIENTE</span>
+
+        <h1>
+            Escolhas melhores
+            para você e para o planeta.
+        </h1>
+
+        <p>
+            Encontre produtos sustentáveis para transformar
+            pequenos hábitos em grandes atitudes.
+        </p>
+
+        <a href="#produtos" class="hero-button">
+            Explorar produtos
+        </a>
+
+    </div>
+
+    <div class="hero-icons">
+        <span>🌱</span>
+        <span>♻️</span>
+        <span>🌎</span>
+    </div>
+
+</section>
+
+
+<section id="produtos" class="products-section">
+
+    <div class="section-title">
+
+        <div>
+            <span class="tag">CATÁLOGO</span>
+            <h2>Produtos sustentáveis</h2>
+        </div>
+
+        <span id="resultCount">0 produtos</span>
+
+    </div>
+
+
+    <div class="filters">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar produto..."
+            >
+
+        </div>
+
+
+        <select id="categoryFilter">
+
+            <option value="Todos">
+                Todas as categorias
+            </option>
+
+        </select>
+
+
+        <div class="price-filter">
+
+            <label>
+                Preço até:
+                <strong id="priceValue">
+                    R$ 250,00
+                </strong>
+            </label>
+
+            <input
+                type="range"
+                id="priceInput"
+                min="0"
+                max="250"
+                value="250"
+                step="5"
+            >
+
+        </div>
+
+
+        <button id="clearFilters" class="clear-button">
+            <i class="fa-solid fa-filter-circle-xmark"></i>
+            Limpar
+        </button>
+
+    </div>
+
+
+    <div id="loading" class="loading">
+
+        <div class="spinner"></div>
+
+        <p>
+            Carregando produtos...
+        </p>
+
+    </div>
+
+
+    <div id="error" class="error hidden">
+        Não foi possível carregar os produtos.
+    </div>
+
+
+    <div id="productsGrid" class="products-grid"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        <strong>
+            <i class="fa-solid fa-leaf"></i>
+            EcoTrend
+        </strong>
+
+        <span>
+            Consumo consciente, tecnologia e sustentabilidade.
+        </span>
+    </div>
+
+    <span>
+        Projeto acadêmico — React + JavaScript
+    </span>
+
+</footer>
+
+
+<!-- SIDEBAR DO CARRINHO -->
+
+<div id="cartOverlay" class="overlay hidden">
+
+    <aside class="cart">
+
+        <div class="cart-header">
+
+            <div>
+                <span class="tag">SEU PEDIDO</span>
+                <h2>Carrinho</h2>
+            </div>
+
+            <button id="closeCart" class="close-button">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div id="cartItems" class="cart-items"></div>
+
+
+        <div id="emptyCart" class="empty-cart">
+
+            <span>🛒</span>
+
+            <h3>
+                Seu carrinho está vazio
+            </h3>
+
+            <p>
+                Adicione produtos para continuar.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+            <button id="checkoutButton" class="checkout-button">
+                Finalizar compra
+            </button>
+
+            <button id="clearCart" class="clear-cart">
+                Limpar carrinho
+            </button>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<!-- CHECKOUT -->
+
+<div id="checkoutOverlay" class="overlay checkout-overlay hidden">
+
+    <div class="checkout-modal">
+
+        <div class="cart-header">
+
+            <div>
+                <span class="tag">
+                    CHECKOUT
+                </span>
+
+                <h2>
+                    Finalizar compra
+                </h2>
+            </div>
+
+            <button id="closeCheckout" class="close-button">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="checkoutForm">
+
+            <label>
+                Nome
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Digite seu nome"
+                    required
+                >
+            </label>
+
+
+            <label>
+                E-mail
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    placeholder="seu@email.com"
+                    required
+                >
+            </label>
+
+
+            <div id="checkoutMessage"></div>
+
+
+            <button
+                type="submit"
+                id="confirmOrder"
+                class="checkout-button"
+            >
+                Confirmar pedido
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
